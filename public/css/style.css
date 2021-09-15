@@ -232,12 +232,13 @@
 
 #nav h4 {
     text-align: center;
+    margin-top: -4px;
 }
 
 #nav .whatsapp{
     text-align: right;
-    margin-top: 0;
-    padding-top: 0;
+    margin-top: -36px;
+    margin-right: 15px;
 }
 
 
@@ -245,7 +246,6 @@
     text-decoration: none;
     color: #1E1E23;
     opacity:1;
-    font-family: 'work sans', sans serif;
     font-size: 1.5em;
     font-weight: 400;
     transition: 200ms;
@@ -270,7 +270,7 @@ nav {
     flex-direction: column;
     position: relative;
     top: 25px;
-    left: 25px;
+    left: 15px;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
@@ -361,8 +361,4 @@ nav {
 
   .superior {
       display: inline-block;
-  }
-
-  .whatsapp {
-    background: red;
   }

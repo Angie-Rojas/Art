@@ -46,22 +46,18 @@
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Info</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Ingresar</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Cerrar sesión</a></li>
                     </ul>
                 </div>
-                <div class="row title">
-                    <h4>Servicios</h4>
-                    <div class="whatsapp">
-                        <a href="index.html" ><img src="{{ URL::asset('assets/WhatsApp.png') }}" alt="WhatsApp"></a>
-                    </div>
-                </div>
-                
-                
+                <h4>Servicios </h4>
+                <div class="whatsapp">
+                    <a href="index.html" ><img src="{{ URL::asset('assets/WhatsApp.png') }}" alt="WhatsApp"></a>
+                </div> 
             </nav>
-            
         </div>
 
 
