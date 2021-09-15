@@ -30,37 +30,97 @@
                 @auth
                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Ingresar</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrarme</a>
                     @endif
                 @endauth
             </div>
         @endif
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fas fa-bars icons"></i></span>
-            </button>
-            <h1 class="navbar-brand">Servicios domiciliarios</h1>
-            <a class="navbar-brand" href="index.html">
-                <img src="{{ URL::asset('assets/WhatsApp.png') }}" alt="WhatsApp">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{{url('login')}}">Ingresar</a>
-                    <a class="nav-link" href="{{url('login')}}">Sevicios</a>
-                    <a class="nav-link" href="{{url('login')}}">Agenda</a>
-                    <a class="nav-link" href="{{url('login')}}">Beneficiarios</a>
-                    <a class="nav-link" href="{{url('login')}}">Contacto</a>
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pagos</a>
-                    <a class="nav-link" href="{{url('login')}}">Ayuda</a>
-                </div>
-            </div>
-        </nav>
 
-        <section id="home">
-          
+        <div id="nav">
+            <nav role="navigation">
+                <div id="menuToggle">   
+                    <input type="checkbox"/>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Info</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="row title">
+                    <h4>Servicios</h4>
+                    <div class="whatsapp">
+                        <a href="index.html" ><img src="{{ URL::asset('assets/WhatsApp.png') }}" alt="WhatsApp"></a>
+                    </div>
+                </div>
+                
+                
+            </nav>
+            
+        </div>
+
+
+
+
+        <!--
+
+        <div id="nav">
+            <nav role="navigation">
+                <div id="menuToggle">   
+                    <input type="checkbox"/>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    servicio
+                    <ul id="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Info</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <div id="nav">
+            <nav role="navigation">
+                <div id="menuToggle">        
+                    <div class="row">
+                        <div class="left">
+                            <input type="checkbox"/>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="center">
+                            Servicios
+                        </div>
+                        <div class="right">
+                            Servicios
+                        </div>
+                    </div>
+                    <ul id="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Info</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+            --->
+
+
+        <div class="banner-home">
             <img src="{{ URL::asset('assets/Banner-full.png') }}" class="img-fluid" alt="Banner Servicios">
+        </div>
+        <section id="home">       
             <div class="container-fluid cards-services">
                 <div class="row">
                     <div class="col-md-4">
@@ -125,7 +185,6 @@
                     </div>
                 </div> 
             </div>   
-
         </section>
 
         <ul class="nav nav-pills nav-justified navbar2" >
