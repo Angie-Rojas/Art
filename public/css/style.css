@@ -6,7 +6,7 @@
 }
 
 #home, #services {
-    /*margin-top: 56px;*/
+    margin-top: 56px;
     margin-bottom: 75px;    
 }
 
@@ -18,22 +18,15 @@
 .navbar-toggler {
     border: none;
 }
-
+/*
 .navbar {
     position: fixed; 
     z-index: 100;
     top: 0; 
     width: 100%; 
 }
+*/
 
-.navbar2 {
-    background: #07709E;
-    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
-    bottom: 0; /*El valor 0 indica que va a quedar arriba de todo*/
-    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
-    margin: 0;
-    padding: 0;
-}
 
 .navbar-light {
     background: #fff;
@@ -50,41 +43,217 @@
     
 }
 
-.cards-services {
-    margin-top: 20px;
-    
+
+
+/*------------------- FOOTER -------------------*/
+
+.navbar2 {
+    background: #07709E;
+    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+    bottom: 0; /*El valor 0 indica que va a quedar arriba de todo*/
+    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+    margin: 0;
+    padding: 0;
 }
 
-.nav-link {
+.navbar2 .nav-link {
     background: whte;
     padding: 0;
     padding-bottom: 10px;
 }
 
-.nav-secundary {
+.navbar2 .nav-secundary {
     padding-bottom: -10px;
     padding-top: 10px;
 }
 
-.nav-item h5 {
+.navbar2 .nav-item h5 {
     font-size: 14px;
     color: #B5D4E2;
     margin: 0;
 }
 
-
-.btn {
+/*------------------- MENÚ L -------------------*/
+.nav-l {
+    visibility:hidden;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
+    position: fixed;
+    z-index: 999;
     width: 100%;
-    font-size: 20px;
+    top: 0;
+}
+
+
+.nav-l .btn{
+    background: #81B844;
+    color: white;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    padding-top: 2px;
     box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
 }
 
-.btn-green {
-    background: #81B844;
-    color: #fff;
-    border-radius: 10px;
-    height: 40px;
+/*------------------- MENÚ  S-------------------*/
+
+.cards-services {
+    margin-top: 20px;
+    
 }
+
+#nav {
+    background: #07709E;
+    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#nav h4 {
+    text-align: center;
+    margin-top: -4px;
+}
+
+#nav .whatsapp{
+    text-align: right;
+    margin-top: -36px;
+    margin-right: 15px;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: #1E1E23;
+    opacity:1;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: 200ms;
+  }
+#nav a:hover {
+    opacity:0.5;
+  }
+
+ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  
+nav {
+    background-color: #fff;
+    height: 65px;
+  }
+  
+  
+  #menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+    left: 15px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  #menuToggle input
+  {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #menuToggle span
+  {
+    display: flex;
+    width: 29px;
+    height: 3px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #07709E;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  #menuToggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+  
+  #menuToggle input:checked ~ span
+  {
+    height: 2px;
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #07709E;
+  }
+  #menuToggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  #menu
+  {
+    position: absolute;
+    width: 93vw;
+    height: 105vh;
+    box-shadow: 0 0 20px #85888C;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li
+  {
+    padding: 10px 0;
+    transition-delay: 2s;
+  }
+  
+  #menuToggle input:checked ~ ul
+  {
+    transform: none;
+  }
+  
+
+  .superior {
+      display: inline-block;
+  }
+
+  #menu hr {
+    border:none;
+    height: 20px;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid #B5D6E4;
+    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.2);
+  }
+
 
 
 /*------------------- HOME -------------------*/
@@ -156,7 +325,18 @@
     align-items: center;
 }
 
+#services .btn {
+    width: 100%;
+    font-size: 20px;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
+}
 
+#services .btn-green {
+    background: #81B844;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+}
 
 /*------------------- RESPONSIVE -------------------*/
 
@@ -191,10 +371,18 @@
     }
     
 }
+
     
 @media only screen and (min-width: 992px) {
     #services .img-services {
         width: 100%;
+    }
+
+    #nav {
+        display: none;
+    }
+    .nav-l {
+        visibility: visible;
     }
 }
 
@@ -202,11 +390,12 @@
     .container-fluid {
         padding-left: 15%;
         padding-right: 15%;
+        width: 100vw;
     }
 
     #home {
         position: absolute;
-        top: 48%;
+        top: 55%;
     }
 
     #services {
@@ -216,149 +405,18 @@
         align-items: center;  
     }
     
+    .navbar2 {
+        display: none;
+    }
+
+    .nav-l .navbar {
+        /* width: 80%;*/
+        padding-right: 8%;
+        padding-left: 8%;
+     }
+
+
 }
 
 
 
-#nav {
-    background: #07709E;
-    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
-    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
-    margin: 0;
-    padding: 0;
-    top: 0;
-    z-index: 999;
-}
-
-#nav h4 {
-    text-align: center;
-    margin-top: -4px;
-}
-
-#nav .whatsapp{
-    text-align: right;
-    margin-top: -36px;
-    margin-right: 15px;
-}
-
-
-#nav a {
-    text-decoration: none;
-    color: #1E1E23;
-    opacity:1;
-    font-size: 1.5em;
-    font-weight: 400;
-    transition: 200ms;
-  }
-#nav a:hover {
-    opacity:0.5;
-  }
-ul {
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  
-nav {
-    background-color: #fff;
-    height: 65px;
-  }
-  
-  
-  #menuToggle {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 25px;
-    left: 15px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-  
-  #menuToggle input
-  {
-    display: flex;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-  }
-  
-  #menuToggle span
-  {
-    display: flex;
-    width: 29px;
-    height: 3px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #07709E;
-    border-radius: 3px;
-    z-index: 1;
-    transform-origin: 5px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-  }
-  
-  #menuToggle span:first-child
-  {
-    transform-origin: 0% 0%;
-  }
-  
-  #menuToggle span:nth-last-child(2)
-  {
-    transform-origin: 0% 100%;
-  }
-  
-  #menuToggle input:checked ~ span
-  {
-    height: 2px;
-    opacity: 1;
-    transform: rotate(45deg) translate(-3px, -1px);
-    background: #36383F;
-  }
-  #menuToggle input:checked ~ span:nth-last-child(3)
-  {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  
-  #menuToggle input:checked ~ span:nth-last-child(2)
-  {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
-  
-  #menu
-  {
-    position: absolute;
-    width: 90vw;
-    height: 100vh;
-    box-shadow: 0 0 10px #85888C;
-    margin: -50px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
-    background-color: #F5F6FA;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
-  
-  #menu li
-  {
-    padding: 10px 0;
-    transition-delay: 2s;
-  }
-  
-  #menuToggle input:checked ~ ul
-  {
-    transform: none;
-  }
-  
-
-  .superior {
-      display: inline-block;
-  }

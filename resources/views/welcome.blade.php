@@ -25,6 +25,7 @@
     </head>
 
     <body class="antialiased">
+        <!--
         @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
@@ -37,7 +38,7 @@
                 @endauth
             </div>
         @endif
-
+        -->
         <div id="nav">
             <nav role="navigation">
                 <div id="menuToggle">   
@@ -46,11 +47,20 @@
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <li><a href="#">Ingresar</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Cerrar sesión</a></li>
+                        <div class="menu-perfil">
+
+                        </div>
+                        <div class="menu-items">
+                            <hr>
+                            <li><a href="{{ route('login') }}">Ingresar</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Ayuda</a></li>
+                        </div>
+                        <div class="menu-salir">
+                            <hr>
+                            <li><a href="#">Cerrar sesión</a></li>
+                        </div>
                     </ul>
                 </div>
                 <h4>Servicios </h4>
@@ -60,57 +70,20 @@
             </nav>
         </div>
 
-
-
-
-        <!--
-
-        <div id="nav">
-            <nav role="navigation">
-                <div id="menuToggle">   
-                    <input type="checkbox"/>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    servicio
-                    <ul id="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Info</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+        <div class="nav-l">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img src="{{ URL::asset('assets/Logo.png') }}" class="img-fluid rounded-start" alt="..."> </a>
+                <ul class="mr-auto"></ul>
+                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link" href="#">Agenda</a>
+                <a class="nav-link" href="#">Beneficiarios</a>
+                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="#">Pagos</a>
+                <a class="btn" href="{{ url('/dashboard') }}">Ingresar</a>
             </nav>
         </div>
+        
 
-
-        <div id="nav">
-            <nav role="navigation">
-                <div id="menuToggle">        
-                    <div class="row">
-                        <div class="left">
-                            <input type="checkbox"/>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="center">
-                            Servicios
-                        </div>
-                        <div class="right">
-                            Servicios
-                        </div>
-                    </div>
-                    <ul id="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Info</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-            --->
 
 
         <div class="banner-home">
