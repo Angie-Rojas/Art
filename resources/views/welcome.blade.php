@@ -103,7 +103,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="card"  href="#">
+                        <a class="card"  href="{{url('clinica-de-heridas')}}">
                             <div class="col-xs-4">
                                 <img src="{{ URL::asset('assets/Clinica-heridas.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
@@ -113,7 +113,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="card"  href="#">
+                        <a class="card"  href="{{url('muestras-de-laboratorio')}}">
                             <div class="col-xs-4">
                                 <img src="{{ URL::asset('assets/Muestras-laboratorio.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
@@ -123,7 +123,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="card"  href="#">
+                        <a class="card"  href="{{url('vacunacion')}}">
                             <div class="col-xs-4">
                                 <img src="{{ URL::asset('assets/Vacunacion.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
@@ -133,7 +133,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="card"  href="#">
+                        <a class="card"  href="{{url('tamizaje-y-deteccion-de-diabetes')}}">
                             <div class="col-xs-4">
                                 <img src="{{ URL::asset('assets/Tamizaje-deteccion-diabetes.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
@@ -143,7 +143,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="card"  href="#">
+                        <a class="card"  href="{{url('cuidadores')}}">
                             <div class="col-xs-4">
                                 <img src="{{ URL::asset('assets/Tamizaje-deteccion-diabetes.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
