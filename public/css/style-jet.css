@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    background: #07709E;
+}
+
+
+.login-register {
+    /*margin-top: 30%;*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+.logo {
+    text-align:center;
+    margin-bottom: -40px;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.card-body {
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    height: 620px;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+h1 {
+    color: #07709E;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+label {
+    color: #07709E;
+    font-size: 16px;
+}
+
+
+
+.btn {
+    background: #81B844;
+    color: white;
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    background: #fff;
+    border-radius: 10px;
+    border-color: #6EB0CB;
+    box-shadow: 0px 1px 3px rgba(0,0,0, 0.2);
+}
+
+    .mb-0 h2 {
+        color: #07709E;
+    }

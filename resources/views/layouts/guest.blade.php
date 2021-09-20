@@ -12,11 +12,12 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link href="{{ URL::asset('css/style-jet.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light font-sans antialiased">
+    <body class="font-sans antialiased">
         {{ $slot }}
     </body>
 </html>

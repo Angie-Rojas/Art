@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout >
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -16,6 +16,9 @@
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
+                <h1>
+                    {{ __('Ingresar') }}
+                </h1>
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Correo') }}" />
 
@@ -51,11 +54,27 @@
                     </div>
                 </div>
 
-                
-
                 <x-jet-button>
-                    {{ __('Log in') }}
+                    {{ __('Ingresar') }}
                 </x-jet-button>
+
+                <div class="mb-0">
+                    <div class="d-flex justify-content-center align-items-baseline">
+                        <h2 class="custom-control-label" for="remember_me">
+                            {{ __('¿No tienes cuenta?') }}&emsp;
+                        </h2>
+                        @if (Route::has('password.request'))
+                            <a class="text-muted me-3" href="{{ route('password.request') }}">
+                                {{ __('Creaur cuenta') }}
+                            </a>
+                        @endif
+                    </div>
+                    @if (Route::has('password.request'))
+                            <a class="text-muted me-3 d-flex justify-content-center align-items-baseline" href="{{ route('password.request') }}">
+                                {{ __('Acceder como invitado') }}
+                            </a>
+                        @endif
+                </div>
 
                 
             </form>
