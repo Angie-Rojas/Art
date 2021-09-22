@@ -17,7 +17,7 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <h1>
-                    {{ __('Ingresar') }}
+                    {{ __('Iniciar sesión') }}
                 </h1>
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Correo') }}" />
@@ -58,26 +58,24 @@
                     {{ __('Ingresar') }}
                 </x-jet-button>
 
-                <div class="mb-0">
+                <div class="mb-0 text-card-down">
                     <div class="d-flex justify-content-center align-items-baseline">
                         <h2 class="custom-control-label" for="remember_me">
                             {{ __('¿No tienes cuenta?') }}&emsp;
                         </h2>
                         @if (Route::has('password.request'))
-                            <a class="text-muted me-3" href="{{ route('password.request') }}">
-                                {{ __('Creaur cuenta') }}
+                            <a class="text-muted me-3" href="{{ route('register') }}">
+                                {{ __('Crear cuenta') }}
                             </a>
                         @endif
                     </div>
-                    @if (Route::has('password.request'))
-                            <a class="text-muted me-3 d-flex justify-content-center align-items-baseline" href="{{ route('password.request') }}">
-                                {{ __('Acceder como invitado') }}
-                            </a>
-                        @endif
+                    <a class="text-muted me-3 d-flex justify-content-center align-items-baseline" href="{{ url('/') }}">
+                        {{ __('Acceder como invitado') }}
+                    </a>
                 </div>
 
                 
-            </form>
+            </form> 
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
