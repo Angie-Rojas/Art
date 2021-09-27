@@ -58,21 +58,50 @@
 
 
         <div class="banner-home">
-            <img src="{{ URL::asset('assets/Banner-agenda.svg') }}" class="img-fluid" alt="Banner Agenda">
+            <img src="{{ URL::asset('assets/Banner-contacto.svg') }}" class="img-fluid" alt="Banner Contacto">
         </div>
-        <section id="agenda">       
+        <section id="contacto">       
             <div class="container-fluid cards-services">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card"> 
+                        <a class="card"  href="{{url('cuidadores')}}">
+                            <div class="col-xs-4" style="background: ">
+                                <img width=45px src="{{ URL::asset('assets/Contacto/Llamada-telefonica.svg') }}" class="img-fluid rounded-start" alt="..."> 
+                            </div> 
                             <div class="col-xs-8 card-text">
-                                <h1 class="card-title">¡Ups!</h1>
-                                <p class="card-text">Este apartado solo está disponible para usuarios registrados, inicia sesión o crea una cuenta para poder continuar. </p>
-                                <a class="btn btn-green" href="#">Iniciar sesión</a>  
-                                <a class="btn btn-blue" href="#">Crear cuenta</a>  
-                            </div>   
-                            
-                        </div>
+                                <h5 class="card-title">Llamada telefónica</h5>
+                            </div>        
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="card"  href="{{url('clinica-de-heridas')}}">
+                            <div class="col-xs-4">
+                                <img width=45px src="{{ URL::asset('assets/Contacto/WhatsApp.svg') }}" class="img-fluid rounded-start" alt="..."> 
+                            </div> 
+                            <div class="col-xs-8 card-text">
+                                <h5 class="card-title">WhatsApp</h5>
+                            </div>        
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="card"  href="{{url('muestras-de-laboratorio')}}">
+                            <div class="col-xs-4">
+                                <img width=45px src="{{ URL::asset('assets/Contacto/Correo.svg') }}" class="img-fluid rounded-start" alt="..."> 
+                            </div> 
+                            <div class="col-xs-8 card-text">
+                                <h5 class="card-title">Correo electrónico</h5>
+                            </div>        
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="card"  href="{{url('vacunacion')}}">
+                            <div class="col-xs-4">
+                                <img width=45px src="{{ URL::asset('assets/Contacto/Chat-en-linea.svg') }}" class="img-fluid rounded-start" alt="..."> 
+                            </div> 
+                            <div class="col-xs-8 card-text">
+                                <h5 class="card-title">Chat en línea</h5>
+                            </div>        
+                        </a>
                     </div>
                 </div> 
             </div>   

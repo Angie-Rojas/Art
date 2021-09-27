@@ -8,24 +8,18 @@
                 <span></span>
                 <ul id="menu">
                     @guest
-                        <div class="menu-perfil">
-
-                        </div>
                         <div class="menu-items">
                             <hr>
-                            <li><a href="{{ route('login') }}">Ingresar</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Contacto</a></li>
-                            <li><a href="#">Ayuda</a></li>
-                        </div>
-                        <div class="menu-salir">
+                            <li><a href="{{ route('login') }}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/>Ingresar</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Servicios.png') }}" alt=""/>Servicios</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Contacto.png') }}" alt=""/>Contacto</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Ayuda.png') }}" alt=""/>Ayuda</a></li>
                             <hr>
-                            <li><a href="#">Cerrar sesión</a></li>
                         </div>
                     @else
-                        <div class="menu-perfil">
+                        <div class="menu-perfil d-flex justify-content-center align-items-baseline">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <img class="rounded-circle" width="100" height="100" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <img class="rounded-circle profile-shadow" width="150" height="150" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             @else
                                 {{ Auth::user()->name }}
 
@@ -36,17 +30,25 @@
                         </div>
                         <div class="menu-items">
                             <hr>
-                            <li><a href="#">Mi Perfil</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Agenda</a></li>
-                            <li><a href="#">Beneficiarios</a></li>
-                            <li><a href="#">Contacto</a></li>
-                            <li><a href="#">Pagos</a></li>
-                            <li><a href="#">Ayuda</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/> Mi Perfil</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Servicios.png') }}" alt=""/> Servicios</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Agenda.png') }}" alt=""/> Agenda</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/> Beneficiarios</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Contacto.png') }}" alt=""/> Contacto</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Pagos.png') }}" alt=""/> Pagos</a></li>
+                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Ayuda.png') }}" alt=""/> Ayuda</a></li>
                         </div>
                         <div class="menu-salir">
                             <hr>
-                            <li><a href="#">Cerrar sesión</a></li>
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                                     onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                    <img class="icon-shadow" src="{{ URL::asset('assets/Menu/Cerrar-sesion.png') }}" alt=""/>
+                                    {{ __('Cerrar sesión') }}
+                            </x-jet-dropdown-link>
+                            <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                                 @csrf
+                            </form>
                         </div>
                     @endguest
 

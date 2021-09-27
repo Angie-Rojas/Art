@@ -29,6 +29,14 @@
                 </div>
 
                 <div class="mb-3">
+                    <x-jet-label value="{{ __('Número de celular:') }}" />
+
+                    <x-jet-input class="{{ $errors->has('number') ? 'is-invalid' : '' }}" type="number" name="number"
+                                 :value="old('number')" required />
+                    <x-jet-input-error for="number"></x-jet-input-error>
+                </div>
+
+                <div class="mb-3">
                     <x-jet-label value="{{ __('Contraseña:') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"

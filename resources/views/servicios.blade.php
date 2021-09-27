@@ -66,7 +66,7 @@
                     <div class="col-md-4">
                         <a class="card"  href="{{url('cuidadores')}}">
                             <div class="col-xs-4" style="background: ">
-                                <img src="{{ URL::asset('assets/Cuidadores.png') }}" class="img-fluid rounded-start" alt="..."> 
+                                <img src="{{ URL::asset('assets/Servicios/Cuidadores.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
                             <div class="col-xs-8 card-text">
                                 <h5 class="card-title">Cuidadores</h5>
@@ -76,7 +76,7 @@
                     <div class="col-md-4">
                         <a class="card"  href="{{url('clinica-de-heridas')}}">
                             <div class="col-xs-4">
-                                <img src="{{ URL::asset('assets/Clinica-heridas.png') }}" class="img-fluid rounded-start" alt="..."> 
+                                <img src="{{ URL::asset('assets/Servicios/Clinica-de-heridas.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
                             <div class="col-xs-8 card-text">
                                 <h5 class="card-title">Clínica de heridas</h5>
@@ -86,7 +86,7 @@
                     <div class="col-md-4">
                         <a class="card"  href="{{url('muestras-de-laboratorio')}}">
                             <div class="col-xs-4">
-                                <img src="{{ URL::asset('assets/Muestras-laboratorio.png') }}" class="img-fluid rounded-start" alt="..."> 
+                                <img src="{{ URL::asset('assets/Servicios/Muestras-de-laboratorio.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
                             <div class="col-xs-8 card-text">
                                 <h5 class="card-title">Muestras de laboratorio</h5>
@@ -96,7 +96,7 @@
                     <div class="col-md-4">
                         <a class="card"  href="{{url('vacunacion')}}">
                             <div class="col-xs-4">
-                                <img src="{{ URL::asset('assets/Vacunacion.png') }}" class="img-fluid rounded-start" alt="..."> 
+                                <img src="{{ URL::asset('assets/Servicios/Vacunacion.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
                             <div class="col-xs-8 card-text">
                                 <h5 class="card-title">Vacunación</h5>
@@ -106,17 +106,7 @@
                     <div class="col-md-4">
                         <a class="card"  href="{{url('tamizaje-y-deteccion-de-diabetes')}}">
                             <div class="col-xs-4">
-                                <img src="{{ URL::asset('assets/Tamizaje-deteccion-diabetes.png') }}" class="img-fluid rounded-start" alt="..."> 
-                            </div> 
-                            <div class="col-xs-8 card-text">
-                                <h5 class="card-title">Tamizaje y detección de diabetes</h5>
-                            </div>        
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="card"  href="{{url('cuidadores')}}">
-                            <div class="col-xs-4">
-                                <img src="{{ URL::asset('assets/Tamizaje-deteccion-diabetes.png') }}" class="img-fluid rounded-start" alt="..."> 
+                                <img src="{{ URL::asset('assets/Servicios/Tamizaje-y-deteccion-de-diabetes.png') }}" class="img-fluid rounded-start" alt="..."> 
                             </div> 
                             <div class="col-xs-8 card-text">
                                 <h5 class="card-title">Tamizaje y detección de diabetes</h5>
@@ -127,17 +117,7 @@
             </div>   
         </section>
 
-        <ul class="nav nav-pills nav-justified navbar2" >
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"><img src="{{ URL::asset('assets/Servicios-1.png') }}" class="img-fluid rounded-start" alt="..."></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-secundary" aria-current="page" href="#"><img src="{{ URL::asset('assets/Agenda-2.png') }}" class="img-fluid rounded-start" alt="..."></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-secundary" aria-current="page" href="#"><img src="{{ URL::asset('assets/Contacto-2.png') }}" class="img-fluid rounded-start" alt="..."></a>
-            </li>
-        </ul>
+        @extends('layouts.footer')
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>

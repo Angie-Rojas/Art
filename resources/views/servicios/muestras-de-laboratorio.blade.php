@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{ URL::asset('assets/Cuidadores-foto.png') }}" class="img-services" alt="Servicios">
+                            <img src="{{ URL::asset('assets/Servicios/Muestras-de-laboratorio-foto.png') }}" class="img-services" alt="Servicios">
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">

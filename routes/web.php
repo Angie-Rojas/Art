@@ -12,10 +12,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*------------- MENÚ   -------------*/
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('servicios');
+})->name('servicios');
+
+Route::get('servicios', function () {
+    return view('servicios');
+})->name('servicios');
+
+Route::get('agenda', function () {
+    return view('agenda');
+})->name('agenda');
+
+Route::get('contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
+
+/*------------- SERVICIOS   -------------*/
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -40,3 +56,4 @@ Route::get('vacunacion', function () {
 Route::get('tamizaje-y-deteccion-de-diabetes', function () {
     return view('servicios/tamizaje-y-deteccion-de-diabetes');
 });
+
