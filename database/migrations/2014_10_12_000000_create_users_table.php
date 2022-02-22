@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    //Elimina las migraciones... Hace el proceso contrario
     public function down()
     {
         Schema::dropIfExists('users');

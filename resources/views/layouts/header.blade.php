@@ -8,6 +8,7 @@
                 <span></span>
                 <ul id="menu">
                     @guest
+                    <!--Cuando no ha iniciado sesión-->
                         <div class="menu-items">
                             <hr>
                             <li><a href="{{ route('login') }}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/>Ingresar</a></li>
@@ -17,6 +18,7 @@
                             <hr>
                         </div>
                     @else
+                    <!--Cuando ya inició sesión-->
                         <div class="menu-perfil d-flex justify-content-center align-items-baseline">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <img class="rounded-circle profile-shadow" width="150" height="150" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
@@ -33,7 +35,7 @@
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/> Mi Perfil</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Servicios.png') }}" alt=""/> Servicios</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Agenda.png') }}" alt=""/> Agenda</a></li>
-                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/> Beneficiarios</a></li>
+                            <li><a href="{{url('beneficiarios')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/> Beneficiarios</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Contacto.png') }}" alt=""/> Contacto</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Pagos.png') }}" alt=""/> Pagos</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Ayuda.png') }}" alt=""/> Ayuda</a></li>
