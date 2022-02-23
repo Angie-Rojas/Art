@@ -55,7 +55,9 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        //
+        //Se consultan los datos de la base de datos
+        $evento = Evento::all();
+        return response()->json($evento);
     }
 
     /**

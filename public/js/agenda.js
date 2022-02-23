@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
       //center: 'title',
       //right: 'dayGridMonth, timeGridWeek, listWeek'
     },
+
+    events: "http://artcuida.test:8080/evento/mostrar",
+
     //Recupera info del día que se presionó
     dateClick: function(info){
     //Al haceer click en la fecha se abre el modal evento que está en calendar.blade
@@ -30,13 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("btnGuardar").addEventListener("click",function(){
     //Recupera los datos de la variable que se asigno arriba
     const datos = new FormData(formulario);
-    console.log(datos);
+    //console.log(datos);
     //Par ver el valor específico de un campo
-    console.log(formulario.title.value);
-    console.log(formulario.descripcion.value);
-    console.log(formulario.start.value);
-    console.log(formulario.end.value);
-    console.log("formulario.end.value");
+    //console.log(formulario.title.value);
+
     //Envia información a través de URL, agregar es de la ruta web.php, se obtienen los datos y se envian a la URL con POST
     axios.post("http://artcuida.test:8080/evento/agregar", datos)
       .then (
