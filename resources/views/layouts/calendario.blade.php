@@ -7,7 +7,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-
         <!-- Fullcalendar -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
@@ -19,6 +18,7 @@
     <body class="font-sans antialiased bg-light">
 
         <script src="{{ asset('js/agenda.js') }}" defer></script>
+        
 
     </body>
 </html>

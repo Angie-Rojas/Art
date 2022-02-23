@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Expr\Print_;
+use Symfony\Component\ErrorHandler\Debug;
 
 class EventoController extends Controller
 {
@@ -14,8 +17,10 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //Aqué se llaman las vistas
+        //Aquí se llaman las vistas
         return view ('evento.calendar');
+
+        //return view('evento.index');
     }
 
     /**
@@ -36,7 +41,10 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Se valida que la info sea correcta
+        request()->validate(Evento::$rules);
+        //Crea la info con todos los datos
+        $evento=Evento::create($request->all());
     }
 
     /**

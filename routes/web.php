@@ -69,15 +69,18 @@ Route::get('tamizaje-y-deteccion-de-diabetes', function () {
 
 /*------------- AGENDA         -------------*/
 
-//Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
 
-Route::get('calendar', function () {
+/*Route::get('calendar', function () {
     return view('evento/calendar');
 })->name('calendar');
 
-Route::get('test', function () {
+/*Route::get('test', function () {
     return view('layouts/calendar');
 })->name('test');
-Auth::routes();
+Auth::routes();*/
+//Recepciona la información para pasar a la base de datos, la envia a storage
+Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
