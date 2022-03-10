@@ -1,17 +1,20 @@
-@extends('layouts.calendario')
-@extends('layouts.head')
+@extends('layouts.app')
 @yield('content')
+@extends('layouts.header-2')
+
+<div class="banner-services">
+  <h1><i class="fas fa-tint"></i></h1>
+  <span>Tamizaje y detección de diabetes</span>
+</div>
+
+<br><br><br>
 
 <div class="container">
     <div id="agenda">
-        Hola mundo
+
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#evento">
-  Launch
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -71,3 +74,5 @@
         </div>
     </div>
 </div>
+
+

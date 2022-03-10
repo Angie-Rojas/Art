@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*------------- MENÚ   -------------*/
+/*-------------   MENÚ   -------------*/
 
 Route::get('/', function () {
     return view('servicios');
@@ -31,7 +32,7 @@ Route::get('contacto', function () {
 })->name('contacto');
 
 
-/*------------- MENÚ DESPLEGABLE  -------------*/
+/*-------------   MENÚ DESPLEGABLE   -------------*/
 
 Route::get('beneficiarios', function () {
     return view('menu/beneficiarios');
@@ -41,7 +42,9 @@ Route::get('direcciones', function () {
     return view('menu/direcciones');
 })->name('direcciones');
 
-/*------------- SERVICIOS   -------------*/
+Route::get('pacientes', [PacienteController::class, 'index'])->name('servicios');
+
+/*-------------   SERVICIOS   -------------*/
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -67,9 +70,15 @@ Route::get('tamizaje-y-deteccion-de-diabetes', function () {
     return view('servicios/tamizaje-y-deteccion-de-diabetes');
 })->name('servicios');
 
-/*------------- AGENDA         -------------*/
+/*-------------   AGENDA   -------------*/
 
-Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::get('agendar-servicio', function () {
+    return view('agendar-servicio');
+})->name('agenda');
+
+Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'], function() {
+    return view('evento');
+})->name('agenda');
 
 //Recepciona la información para pasar a la base de datos, la envia a storage
 Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
@@ -78,3 +87,5 @@ Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 's
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

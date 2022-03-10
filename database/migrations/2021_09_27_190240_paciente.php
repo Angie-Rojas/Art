@@ -16,6 +16,8 @@ class Paciente extends Migration
         Schema::create('pacientes',function(Blueprint $table) {
             $table->id();
 
+            $table->integer('id_usuario');
+
             $table->dateTime('fecha_nacimiento');
             $table->string('nombre', 100);
             $table->string('sexo', 45);

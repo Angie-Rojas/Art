@@ -55,35 +55,26 @@
         </div>
         
 
-        <div class="banner-home">
-            <img src="{{ URL::asset('assets/Banner-agenda.svg') }}" class="img-fluid" alt="Banner Agenda">
-        </div>
 
-        <section id="agenda">  
-            @guest
-            <!--Cuando no ha iniciado sesión-->
+
+        <div class="banner-home">
+            <img src="{{ URL::asset('assets/Banner-full.png') }}" class="img-fluid" alt="Banner Servicios">
+        </div>
+        <section id="home">       
             <div class="container-fluid cards-services">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card"> 
-                            <div class="col-xs-8 card-text">
-                                <h1 class="card-title">¡Ups!</h1>
-                                <p class="card-text">Este apartado solo está disponible para usuarios registrados, inicia sesión o crea una cuenta para poder continuar. </p>
-                                <a class="btn btn-green" href="#">Iniciar sesión</a>  
-                                <a class="btn btn-blue" href="#">Crear cuenta</a>  
-                            </div>   
-                            
+                    @foreach ($pacientes as $paciente)
+                        <div class="col-md-4">
+                            <a class="card"  href="{{url('cuidadores')}}">
+                                <div class="col-xs-8 card-text">
+                                    <h5 class="card-title">{{$paciente->nombre}}</h5>
+                                    <h6>{{$paciente->direccion}}</h6>
+                                </div>        
+                            </a>
                         </div>
-                    </div>
+                    @endforeach
                 </div> 
             </div>   
-            @else
-            <!--Cuando ya ha iniciado sesión-->
-
-
-            
-            @endguest
-
         </section>
 
         @extends('layouts.footer')
@@ -91,5 +82,3 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>
 </html>
-
-@extends('layouts.footer')

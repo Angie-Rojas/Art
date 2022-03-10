@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Paciente;
 use App\Models\Proceso;
+use App\Models\Direccione;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         User::factory(20)->create();
+        //Direccione::factory(20)->create();
         Paciente::factory(20)->create();
-        Proceso::factory(20)->create();
+        //Proceso::factory(20)->create();
+
     }
 }

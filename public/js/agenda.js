@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
   
   //Se le pon la etiqueta a una nueva variable de calendar.blade.php
@@ -21,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Recupera info del día que se presionó
     dateClick: function(info){
-    //Al haceer click en la fecha se abre el modal evento que está en calendar.blade
+      //Recupera el día seleccionado
+      formulario.reset();
+      formulario.start.value = info.dateStr;
+      formulario.end.value = info.dateStr;
       $("#evento").modal("show");
     }
 
@@ -36,12 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
     //console.log(datos);
     //Par ver el valor específico de un campo
     //console.log(formulario.title.value);
-
     //Envia información a través de URL, agregar es de la ruta web.php, se obtienen los datos y se envian a la URL con POST
     axios.post("http://artcuida.test:8080/evento/agregar", datos)
       .then (
         (respuesta) => {
-          $("evento").modal("hide")
+          //Método de FullCalendar que actualiza la info
+          calendar.refetchEvents();
+          $("#evento").modal("hide")
         } 
       ).catch(
         error=>{
