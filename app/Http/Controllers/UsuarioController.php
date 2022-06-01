@@ -2,50 +2,47 @@
 
 namespace App\Http\Controllers;
 use App\Models\Paciente;
+
 use Illuminate\Http\Request;
 
-class PacienteController extends Controller
+class UsuarioController extends Controller
 {
-    public function index(){
-        //Aquí se trae la colección
-        //$pacientes = Paciente::orderBy('id', 'desc')->paginate();
-        $pacientes = Paciente::where('id_usuario', '=', auth()->id())->paginate();
-
-        //return $pacientes;
-        //Para pasarle la colección a una vista
-        return view('menu/usuarios', compact('pacientes'));
-        return view('agendar-servicio', compact('pacientes'));
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
 
-    public function index2(){
-        //Aquí se trae la colección
-        //$pacientes = Paciente::orderBy('id', 'desc')->paginate();
-        $pacientes = Paciente::where('id_usuario', '=', auth()->id())->paginate();
-
-        return view('agendar-servicio', compact('pacientes'));
-    }
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
     }
 
-    
-
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $usuario = new Paciente();
 
-        $usuario -> id_usuario = auth()->id();
         $usuario -> nombre = $request->name;
         $usuario -> telefono = $request->phone;
         $usuario -> direccion = $request->address;
         $usuario -> ciudad = $request->locate;
 
         $usuario->save();
-
-
     }
 
     /**
@@ -54,10 +51,10 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*public function show($id)
+    public function show($id)
     {
-        
-    }*/
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

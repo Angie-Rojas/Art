@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,8 +12,13 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+|  
 */
+
+/**
+ * Puedes mirar este tuto https://www.youtube.com/watch?v=PDbOsGlCf7o&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=3 👀
+ */
+
 /*-------------   MENÚ   -------------*/
 
 Route::get('/', function () {
@@ -34,15 +40,13 @@ Route::get('contacto', function () {
 
 /*-------------   MENÚ DESPLEGABLE   -------------*/
 
-Route::get('beneficiarios', function () {
-    return view('menu/beneficiarios');
-})->name('beneficiarios');
 
 Route::get('direcciones', function () {
     return view('menu/direcciones');
 })->name('direcciones');
 
 Route::get('pacientes', [PacienteController::class, 'index'])->name('servicios');
+
 
 /*-------------   SERVICIOS   -------------*/
 
@@ -70,11 +74,14 @@ Route::get('tamizaje-y-deteccion-de-diabetes', function () {
     return view('servicios/tamizaje-y-deteccion-de-diabetes');
 })->name('servicios');
 
+
 /*-------------   AGENDA   -------------*/
 
-Route::get('agendar-servicio', function () {
+/*Route::get('agendar-servicio', function () {
     return view('agendar-servicio');
-})->name('agenda');
+})->name('agenda');*/
+
+Route::get('agendar-servicio', [PacienteController::class, 'index2'])->name('servicios');
 
 Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'], function() {
     return view('evento');
@@ -89,3 +96,11 @@ Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 's
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+/*-------------   PACIENTES   -------------*/
+
+Route::get('pacientes/nuevo', function () {
+    return view('menu/usuario-nuevo');
+})->name('otro');
+
+/* Formulario */
+Route::post('pacientes', [PacienteController::class,'store'])->name('usuario.store');

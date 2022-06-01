@@ -1,13 +1,23 @@
 /*------------------- GENERAL -------------------*/
 
+html, body {
+    display: flex;
+    flex-direction: column;
+}
+
 *{
     color: #212121;
     line-height: 20px;
+    font-family: 'Nunito', sans-serif;
 }
 
-#home, #services {
+#home, #services{
     margin-top: 56px;
     margin-bottom: 75px;    
+}
+
+#user {
+    margin-top: 56px;
 }
 
 .icons {
@@ -45,6 +55,7 @@
 
 
 
+
 /*------------------- FOOTER -------------------*/
 
 .navbar2 {
@@ -54,6 +65,7 @@
     width: 100%; /*100% para que ocupe todo el ancho del navegador*/
     margin: 0;
     padding: 0;
+    z-index: 99;
 }
 
 .navbar2 .nav-link {
@@ -95,9 +107,21 @@
 
 /*------------------- MENÚ  S-------------------*/
 
+.cards-principal {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cards-services {
-    margin-top: 20px;
-    
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav {
@@ -143,6 +167,7 @@ ul {
 nav {
     background-color: #fff;
     height: 65px;
+    display: block;
   }
   
   
@@ -262,10 +287,63 @@ nav {
     margin-right: 15px;
 }
 
+/*------------------- NAV 2 -------------------*/
+
+#nav-2 {
+    background: #07709E;
+    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+    height: 57px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#nav-2 .back {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 18px;
+    margin-left: 18px;
+    color: #fff;
+}
+
+#nav-2 h4 {
+    text-align: center;
+    margin-top: -24px;
+    color: #fff;
+}
+
+#nav-2 .close-2 {
+    text-align: right;
+    margin-top: -35px;
+    margin-right: 18px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+}
+
+
+
+
+#nav-2 a {
+    text-decoration: none;
+    color: #1E1E23;
+    opacity:1;
+    font-size: 1.4em;
+    font-weight: 400;
+    transition: 200ms;
+  }
+#nav-2 a:hover {
+    opacity:0.5;
+  }
+
+
+
 /*------------------- HOME -------------------*/
 .banner-home {
-    margin-top: 65px;
-    position: relative;
+    display: block;
+    padding-top: 5px;
 }
 
 #home .card {
@@ -308,7 +386,6 @@ nav {
 }
 
 .banner-services {
-    margin-top: 56px;
     background: #07709E;
     height: 150px;
     padding-top: 30px;
@@ -342,7 +419,10 @@ nav {
     color: #fff;
     border-radius: 10px;
     height: 40px;
+    display: block;
 }
+
+
 
 /*************/
 
@@ -421,6 +501,60 @@ nav {
     text-align: center;
 }
 
+/*------------------- USERS -------------------*/
+
+.banner-user {
+    display: block;
+    width: 100%; 
+    z-index: 998;
+}
+
+#user .card {
+    height: 120px;
+    margin-bottom: 18px;
+    box-shadow: 0px 2px 6px rgba(10, 63, 87, 0.2);
+    border: none;
+    border-radius: 10px;
+}
+
+#user .card-text {
+    width: 75%;
+}
+
+#user .card{
+  display: table;
+  width: 100%;
+}
+
+#user .card > div{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+.cards-user {
+    display: flex;
+    align-items: center;
+    height: 89%;
+}
+
+#user h4 {
+    color: #07709E;
+    text-align: left;
+    line-height: 25px;
+}
+
+#user h5 {
+    text-align: left;
+    line-height: 18px;
+}
+
+#user .card img {
+    width:85px;
+    height:85px;
+    margin-left: 20px;
+    margin-right: 28px;
+}
 /*------------------- RESPONSIVE -------------------*/
 
 @media only screen and (min-width: 576px) {
@@ -497,8 +631,6 @@ nav {
         padding-right: 8%;
         padding-left: 8%;
      }
-
-
 }
 
 
@@ -510,11 +642,6 @@ nav {
 
 html {
     height: 100%
-}
-
-#grad1 {
-    background-color: #9C27B0;
-    background-image: linear-gradient(120deg, #FF4081, #81D4FA)
 }
 
 #msform {
@@ -578,13 +705,11 @@ html {
     box-shadow: none !important;
     border: none;
     font-weight: bold;
-    border-bottom: 2px solid skyblue;
     outline-width: 0
 }
 
 #msform .action-button {
     width: 100px;
-    background: skyblue;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -600,20 +725,26 @@ html {
 }
 
 #msform .action-button-previous {
-    width: 100px;
-    background: #616161;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 0px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px
+    background: #259BDA;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
 }
 
 #msform .action-button-previous:hover,
 #msform .action-button-previous:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+}
+
+
+
+#msform .btn-group {
+    display: inline;
+}
+
+#msform .btn-next {
+    background: red;
 }
 
 select.list-dt {
@@ -659,26 +790,6 @@ select.list-dt:focus {
     width: 25%;
     float: left;
     position: relative
-}
-
-#progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\f023"
-}
-
-#progressbar #personal:before {
-    font-family: FontAwesome;
-    content: "\f007"
-}
-
-#progressbar #payment:before {
-    font-family: FontAwesome;
-    content: "\f09d"
-}
-
-#progressbar #confirm:before {
-    font-family: FontAwesome;
-    content: "\f00c"
 }
 
 #progressbar li:before {
@@ -738,4 +849,54 @@ select.list-dt:focus {
 .fit-image {
     width: 100%;
     object-fit: cover
+}
+
+.st-text {
+    text-align: left;
+    color: #212121;
+}
+
+.st {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+
+
+/******* FORM *******/
+
+.base-form label{
+    display: block;
+    color: #07709E;
+    font-size: 18px;
+    position: relative;
+    z-index: 999;
+}
+
+.base-form input {
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid #6EB0CB;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
+    padding: 0 15px 0 15px;
+}
+
+.base-form input:focus {
+    outline: none !important;
+    border: 1px solid #6EB0CB;
+}
+
+.base-form .btn-green {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.2);
+    background: #81B844;
+    color: #fff;
+    height: 40px;
+    display: block;
+    font-size: 20px;
+    border: 0;
+    margin-top: 20px;
 }

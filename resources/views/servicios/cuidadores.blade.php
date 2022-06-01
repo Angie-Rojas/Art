@@ -1,13 +1,11 @@
 @extends('layouts.app')
 @yield('content')
-@extends('layouts.header-2')
-
-    <div class="banner-services">
-        <h1><i class="fas fa-home"></i></h1>
-        <span>Cuidadores</span>
-    </div>
-
     <section id="services">
+        <div class="banner-services">
+            <h1><i class="fas fa-home"></i></h1>
+            <span>Cuidadores</span>
+        </div>
+        
         <div class="container-fluid cards-services">
             <div class="card">
                 <div class="row">
@@ -27,6 +25,6 @@
                     </div>
                 </div> 
             </div>
-            <a class="btn btn-green" href="#">Agendar este servicio</a>
+            <a class="btn btn-green" href="{{url('agendar-servicio')}}" >Agendar este servicio</a>
         </div>
     </section>

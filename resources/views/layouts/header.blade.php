@@ -1,3 +1,4 @@
+<!-- Plantilla que contiene el menú web y el menú móvil -->
 <header>
     <div id="nav">
         <nav role="navigation">
@@ -8,7 +9,7 @@
                 <span></span>
                 <ul id="menu">
                     @guest
-                    <!--Cuando no ha iniciado sesión-->
+                    <!-- Cuando no ha iniciado sesión -->
                         <div class="menu-items">
                             <hr>
                             <li><a href="{{ route('login') }}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/>Ingresar</a></li>
@@ -18,7 +19,7 @@
                             <hr>
                         </div>
                     @else
-                    <!--Cuando ya inició sesión-->
+                    <!-- Cuando ya inició sesión -->
                         <div class="menu-perfil d-flex justify-content-center align-items-baseline">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <img class="rounded-circle profile-shadow" width="150" height="150" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
@@ -33,9 +34,10 @@
                         <div class="menu-items">
                             <hr>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Mi-perfil.png') }}" alt=""/> Mi Perfil</a></li>
-                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Servicios.png') }}" alt=""/> Servicios</a></li>
-                            <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Agenda.png') }}" alt=""/> Agenda</a></li>
-                            <li><a href="{{url('beneficiarios')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/> Beneficiarios</a></li>
+                            <li><a href="{{url('servicios')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Servicios.png') }}" alt=""/> Servicios</a></li>
+                            <li><a href="{{url('agenda')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Agenda.png') }}" alt=""/> Agenda</a></li>
+                            <li><a href="{{url('pacientes')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/>Pacientes</a></li>
+                            <li><a href="{{url('direcciones')}}" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Beneficiarios.png') }}" alt=""/>Direcciones</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Contacto.png') }}" alt=""/> Contacto</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Pagos.png') }}" alt=""/> Pagos</a></li>
                             <li><a href="#" class="dropdown-item"><img class="icon-shadow" src="{{ URL::asset('assets/Menu/Ayuda.png') }}" alt=""/> Ayuda</a></li>
@@ -56,9 +58,16 @@
 
                 </ul>
             </div>
-            <h4>Servicios </h4>
+            <h4>{{$titulo = 'ArtCuidadores'}}</h4>
             <div class="whatsapp">
                 <a href="index.html" ><img src="{{ URL::asset('assets/WhatsApp.png') }}" alt="WhatsApp"></a>
+                <!-- Cliengo installation code for FunciColombia --> 
+                <script 
+                type="text/javascript">(function () { var ldk = document.createElement('script'); 
+                ldk.type = 'text/javascript'; ldk.async = true; 
+                ldk.src = 'https://s.cliengo.com/weboptimizer/627e9c75fbe3c8002ad869be/627e9c77fbe3c8002ad869c1.js?platform=view_installation_code'; 
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ldk, s); })();
+                </script>
             </div> 
         </nav>
     </div>
@@ -69,7 +78,7 @@
             <ul class="mr-auto"></ul>
             <a class="nav-link" href="#">Servicios</a>
             <a class="nav-link" href="#">Agenda</a>
-            <a class="nav-link" href="#">Beneficiarios</a>
+            <a class="nav-link" href="#">Pacientes</a>
             <a class="nav-link" href="#">Contacto</a>
             <a class="nav-link" href="#">Pagos</a>
             <a class="btn" href="{{ url('/dashboard') }}">Ingresar</a>
