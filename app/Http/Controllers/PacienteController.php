@@ -45,7 +45,7 @@ class PacienteController extends Controller
 
         $usuario->save();
 
-
+        return redirect('pacientes');
     }
 
     /**

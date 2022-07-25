@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\DireccionesController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /**
- * Puedes mirar este tuto https://www.youtube.com/watch?v=PDbOsGlCf7o&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=3 👀
- */
+ * Puedes mirar este tuto ▶ https://www.youtube.com/watch?v=PDbOsGlCf7o&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=3 👀
+ * Los "name" se dividen en servicios, agenda, contacto y otro... lo que hacen es catalogar el apartado para mostrar el resaltado en la parte inferior
+*/
 
 /*-------------   MENÚ   -------------*/
 
@@ -41,9 +43,7 @@ Route::get('contacto', function () {
 /*-------------   MENÚ DESPLEGABLE   -------------*/
 
 
-Route::get('direcciones', function () {
-    return view('menu/direcciones');
-})->name('direcciones');
+Route::get('direcciones', [DireccionesController::class, 'index'])->name('otro');
 
 Route::get('pacientes', [PacienteController::class, 'index'])->name('servicios');
 
@@ -103,4 +103,14 @@ Route::get('pacientes/nuevo', function () {
 })->name('otro');
 
 /* Formulario */
-Route::post('pacientes', [PacienteController::class,'store'])->name('usuario.store');
+Route::post('pacientes/nuevo', [PacienteController::class,'store'])->name('usuario.store');
+
+
+/*-------------   DIRECCIONES   -------------*/
+
+Route::get('direcciones/nueva', function () {
+    return view('menu/direccion-nueva');
+})->name('otro');
+
+/* Formulario */
+Route::post('direcciones/nueva', [DireccionesController::class,'store'])->name('direccion.store');
