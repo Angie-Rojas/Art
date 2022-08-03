@@ -1,16 +1,20 @@
 @extends('layouts.app')
 @yield('content')
-    <section id="services">
-        <div class="banner-services">
+@extends('layouts.header-2')
+
+    <div class="banner-services">
+        <div class="centrar">
             <h1><i class="fas fa-home"></i></h1>
             <span>Cuidadores</span>
         </div>
-        
+    </div>
+
+    <section id="services">
         <div class="container-fluid cards-services">
             <div class="card">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{ URL::asset('assets/Servicios/Cuidadores-foto.png') }}" class="img-services" alt="Servicios">
+                        <img src="{{ URL::asset('assets/Servicios/Clinica-de-heridas-foto.png') }}" class="img-services" alt="Servicios">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -23,8 +27,8 @@
                             </p>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
-            <a class="btn btn-green" href="{{url('agendar-servicio')}}" >Agendar este servicio</a>
+            <a class="btn btn-green" href="#">Agendar este servicio</a>
         </div>
     </section>

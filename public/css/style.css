@@ -1,8 +1,10 @@
 /*------------------- GENERAL -------------------*/
 
 html, body {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 *{
@@ -61,11 +63,12 @@ html, body {
 .navbar2 {
     background: #07709E;
     position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
-    bottom: 0; /*El valor 0 indica que va a quedar arriba de todo*/
+
+    bottom: 0; /*Para que quede arriba de todo*/
     width: 100%; /*100% para que ocupe todo el ancho del navegador*/
     margin: 0;
     padding: 0;
-    z-index: 99;
+    z-index: 99; /*Para que los cards no pasen por encima*/
 }
 
 .navbar2 .nav-link {
@@ -113,17 +116,13 @@ html, body {
 
 .nav-l .btn a:hover {
     color: #fff;
-    background: red;
 }
 
 /*------------------- MENÚ  S-------------------*/
 
 .cards-principal {
     height: 100%;
-    position: relative;
-    z-index: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -359,22 +358,30 @@ nav {
     padding-top: 5px;
 }
 
+.banner-content {
+    display: none;
+}
+
 #home .card {
     height: 80px;
-    margin-bottom: 18px;
+    margin: 10px 0;
     box-shadow: 0px 2px 6px rgba(10, 63, 87, 0.2);
     border: none;
     border-radius: 10px;
+    display: table;
+    width: 100%;
 }
+
+#home a:hover {
+    background-color: #f8fafc;
+    text-decoration: none;
+}
+
 
 #home .card-text {
     width: 75%;
 }
 
-#home .card{
-  display: table;
-  width: 100%;
-}
 
 #home .card > div{
     display: table-cell;
@@ -384,14 +391,14 @@ nav {
 
 /*------------------- SERVICES -------------------*/
 
-#services .card{
+#services a:hover .card{
     background: #F5F9FB;
     border: none;
     border-radius: 10px;
-    margin-bottom: 5%;
     display: flex;
     align-items: center;
 }
+
 
 #services .img-services {
     margin: 5%;
@@ -401,9 +408,14 @@ nav {
 .banner-services {
     background: #07709E;
     height: 150px;
-    padding-top: 30px;
+    margin-top: 60px;
 	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 .banner-services i {
     color: #fff;
@@ -433,9 +445,12 @@ nav {
     border-radius: 10px;
     height: 40px;
     display: block;
+    margin-top: 20px;
 }
 
-
+#services a:hover{
+    background-color: #8EC255;
+}
 
 /*************/
 
@@ -568,7 +583,19 @@ nav {
     margin-left: 20px;
     margin-right: 28px;
 }
+
+#services {
+    margin: 25px 0 85px 0;
+}
+
 /*------------------- RESPONSIVE -------------------*/
+
+@media only screen and (max-width: 1200px) {
+    /*PENDIENTE*/
+    html, body {
+        display: flex;
+    }
+}
 
 @media only screen and (min-width: 576px) {
     #services .card{
@@ -599,9 +626,7 @@ nav {
         align-items: center;
     }
 
-    #home {
-        display: flexbox;
-    }
+
 
 }
 
@@ -617,6 +642,36 @@ nav {
     .nav-l {
         visibility: visible;
     }
+    /*Cambio en banner, se ven los textos*/
+    .banner-home {
+        position: relative;
+    }
+    .banner-content {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translate(0%, -50%);
+    }
+    .banner-title {
+        color: #07709E;
+        font-size: 28px;
+        font-weight: 700;
+    }
+    .banner-text{
+        line-height: 50px;
+        font-size: 24px;
+    }
+    .banner-btn {
+        background-color: #81B844;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 50px;
+        display: inline-block;
+    }
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -646,7 +701,13 @@ nav {
         padding-right: 8%;
         padding-left: 8%;
      }
+     .cards-principal {
+        margin-top: -60px;
+    }
+
 }
+
+
 
 
 /*  STEPPER     */

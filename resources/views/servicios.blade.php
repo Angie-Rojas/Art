@@ -5,6 +5,11 @@
 
     <div class="banner-home">
         <img src="{{ URL::asset('assets/Banner-full.png') }}" class="img-fluid" alt="Banner Servicios">
+        <div class="banner-content">
+            <div class="banner-title">BIENVENIDO A ARTCUIDADORES</div>
+            <div class="banner-text">Ya puedes instalar nuestra aplicación para estar siempre en contacto</div>
+            <a href=""><div class="banner-btn">Instalar</div></a>
+        </div>
     </div>
 
     <div class="container-fluid cards-principal">
