@@ -89,9 +89,12 @@ Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'], f
 
 //Recepciona la información para pasar a la base de datos, la envia a storage
 Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
-
+//Lee la info de la Database
 Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
-
+//Accede a editar
+Route::post('/evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
+//Borra la fecha del calendario
+Route::post('/evento/borrar/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

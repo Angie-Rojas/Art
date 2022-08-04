@@ -11,11 +11,11 @@ class Evento extends Model
     //Aquí se ponen las validaciones
     static $rules=[
         'title'=>'required',
-        'descripcion'=>'required',
+        'hora'=>'required',
         'start'=>'required',
         'end'=>'required'
     ];
     //Distingue los datos que se trabajan
-    //protected $fillable=['title','descripcion', 'start', 'end'];
-    protected $fillable=['title','descripcion', 'start', 'end'];
+    protected $fillable=['title','hora', 'start', 'end'];
+    //protected $fillable=['start'];
 }

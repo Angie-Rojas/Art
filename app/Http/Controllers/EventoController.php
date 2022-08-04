@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use PhpParser\Node\Expr\Print_;
 use Symfony\Component\ErrorHandler\Debug;
+//Carbon sirve para dar formato a los datos
+use Carbon\Carbon;
 
 class EventoController extends Controller
 {
@@ -66,9 +68,15 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Evento $evento)
+    public function edit($id)
     {
-        //
+        //consulta los datos y envia la respuesta
+        $evento = Evento::find($id);
+
+        $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
+        $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
+
+        return response()->json($evento);
     }
 
     /**
@@ -89,8 +97,11 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy($id)
     {
-        //
+        //Elimina el registro del calendario
+        $evento = Evento::find($id)->delete();
+
+        return response()->json($evento);
     }
 }

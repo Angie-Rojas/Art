@@ -20,14 +20,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Hora</h3>
+                <h5 class="modal-title">Hora</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
             <div class="modal-body">
-                <h4>Selecciona la hora en la que deseas que inicie el servicio</h4>
-                <p>Recuerda que debes agendar con mínimo 12 horas de anticipación</p>
+                <p>Selecciona la hora en la que deseas que inicie el servicio</p>
                 <form action="">
                     <!--Permite trabajar con todos los datos que llegan, es un dato oculto-->
                     {!!csrf_field()!!}
@@ -38,6 +37,7 @@
                       <small id="helpId" class="text-muted">Help text</small>
                     </div>
 
+
                     <!--Debe ser title porque fullcalendar respeta inglés-->
                     <div class="form-group">
                       <label for="title">Título:</label>
@@ -47,21 +47,20 @@
 
                     <!--Aquí va la descripción-->
                     <div class="form-group">
-                      <label for="descripcion">Descripción</label>
-                      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                      <label for="hora">Hora</label>
+                      <input type="time" name="hora" id="hora" class="form-control" placeholder="" aria-describedby="helpId">
                     </div>
-
 
                     <!--Fecha de inicio y final, también en inglés-->
                     <div class="form-group">
                       <label for="start">Inicio:</label>
-                      <input type="text" name="start" id="start" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="date" name="start" id="start" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">Help text</small>
                     </div>
 
                     <div class="form-group">
                       <label for="end">Final</label>
-                      <input type="text" name="end" id="end" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="date" name="end" id="end" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">Help text</small>
                     </div>
 
