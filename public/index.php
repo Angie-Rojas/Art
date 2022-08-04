@@ -1,5 +1,19 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Developing
+|--------------------------------------------------------------------------
+|
+| 👩🏻‍⚕️ This code was developed for ArtCuidadores
+| 🔒 All Rights Reserved 2021
+|
+| 👩🏻‍💻 Author: Angie Paola Rojas Páez
+| 📧 E-mail: rpangiep98@gmail.com
+| 🐈 Github: https://github.com/Ngie98/Art
+|
+*/
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 

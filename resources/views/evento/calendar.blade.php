@@ -3,8 +3,7 @@
 @extends('layouts.header-2')
 
 <div class="banner-services">
-  <h1><i class="fas fa-tint"></i></h1>
-  <span>Tamizaje y detección de diabetes</span>
+  <span>Calendario</span>
 </div>
 
 <br><br><br>
@@ -21,12 +20,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h3 class="modal-title">Hora</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
             <div class="modal-body">
+                <h4>Selecciona la hora en la que deseas que inicie el servicio</h4>
+                <p>Recuerda que debes agendar con mínimo 12 horas de anticipación</p>
                 <form action="">
                     <!--Permite trabajar con todos los datos que llegan, es un dato oculto-->
                     {!!csrf_field()!!}
@@ -49,6 +50,7 @@
                       <label for="descripcion">Descripción</label>
                       <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                     </div>
+
 
                     <!--Fecha de inicio y final, también en inglés-->
                     <div class="form-group">
